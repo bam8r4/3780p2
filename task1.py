@@ -29,7 +29,7 @@ def verifyPassword(password):
         return False
 
 def generateSalt():
-    return random.randint(0,10)
+    return random.randint(0,9)
 
 def checkFile1(username, password):
     file = open("file1","r")
