@@ -1,6 +1,7 @@
 import hashlib
 import sys
 import random
+import time
 
 #Creating this boolean to tell the code whether we are using file type 2 or file type 3
 type2 = True
@@ -48,10 +49,16 @@ def checkFile3(password):
 
 
 mylist.append(0)
+count = 0
 password = ""
-while(len(mylist)<8):
+begin = time.time()
+
+while(len(mylist)<6):
     password = getPass(mylist)
+
+    #commented out to choose what file type to check.
     checkFile2(password)
+    #checkFile3(password)
     mylist[0] += 1
 
     for y in range(0, len(mylist)):
@@ -63,3 +70,6 @@ while(len(mylist)<8):
             if(mylist[y] == 10):
                 mylist[y] = 0
                 mylist[y+1] += 1
+
+end = time.time()
+print(end - begin)
